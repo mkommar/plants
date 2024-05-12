@@ -4,6 +4,10 @@ import os
 import sqlite3
 from queue import Queue
 import threading
+import logging
+
+# Setup basic configuration for logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Define thread-local storage for database connections to ensure thread safety
 thread_local = threading.local()
@@ -94,13 +98,19 @@ def prepare_downloads(plant_names, api_key):
         conn.commit()
         print(f"Download tasks prepared for {plant}")
 
+# Example of logging within the worker function
 def worker(queue, api_key):
-    """Worker function to process download tasks."""
     while not queue.empty():
         task = queue.get()
-        download_images(task, api_key)
-        queue.task_done()
-        print(f"Task completed for {task[0]}")
+        logging.debug(f"Processing task: {task}")
+        try:
+            download_images(task, api_key)
+            queue.task_done()
+            logging.info(f"Task completed successfully for {task[0]}")
+        except Exception as e:
+            logging.error(f"Error processing task {task[0]}: {e}")
+            queue.task_done()  # Ensure task_done is called even on error
+
 
 def check_existing_data():
     """Check if any download tasks are already stored in the database."""
@@ -128,7 +138,7 @@ def main():
         queue.put((plant, train_dir, test_dir))
 
     print("Starting worker threads.")
-    for _ in range(4):
+    for _ in range(12):
         t = threading.Thread(target=worker, args=(queue, api_key))
         t.start()
 
