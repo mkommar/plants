@@ -1,6 +1,33 @@
 import requests
 from bs4 import BeautifulSoup
 import os
+import sqlite3
+from queue import Queue
+import threading
+# Define thread-local storage
+thread_local = threading.local()
+
+def get_db_connection():
+    """Retrieve a new database connection for the current thread."""
+    if not hasattr(thread_local, "connection"):
+        thread_local.connection = sqlite3.connect('downloads.db', check_same_thread=False)
+        thread_local.cursor = thread_local.connection.cursor()
+    return thread_local.connection, thread_local.cursor
+
+def setup_database():
+    """Create the database and downloads table if not already present."""
+    conn, cursor = get_db_connection()
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS downloads (
+        plant_name TEXT,
+        image_url TEXT,
+        status TEXT,
+        file_path TEXT
+    )
+    ''')
+    conn.commit()
+
+
 
 def get_plant_names(url):
     headers = {'User-Agent': 'CoolBot/0.0 (https://example.org/coolbot/; coolbot@example.org)'}
@@ -35,58 +62,81 @@ def get_plant_names(url):
                     
     return plants
 
-
-def download_images(plant_names, api_key, num_train=30, num_test=15):
+def download_images(task, api_key):
+    plant, train_dir, test_dir = task
+    conn, cursor = get_db_connection()  # Get thread-specific DB connection
     headers = {'Ocp-Apim-Subscription-Key': api_key}
     endpoint = "https://api.bing.microsoft.com/v7.0/images/search"
-    
-    base_directory = 'plant_images'
-    if not os.path.exists(base_directory):
-        os.makedirs(base_directory)
-    
+    offset = 0
+    num_images = 45  # Total images to download
+
+    while True:
+        # Check database for remaining downloads
+        cursor.execute('SELECT * FROM downloads WHERE plant_name=? AND status="pending"', (plant,))
+        pending = cursor.fetchall()
+        if not pending:
+            break  # No more pending downloads
+
+        for item in pending:
+            try:
+                img_data = requests.get(item[1])
+                img_data.raise_for_status()
+                subdir = train_dir if 'train' in item[3] else test_dir
+                with open(item[3], 'wb') as f:
+                    f.write(img_data.content)
+                cursor.execute('UPDATE downloads SET status="completed" WHERE image_url=?', (item[1],))
+                conn.commit()
+            except Exception as e:
+                print(f"Failed to download {item[1]}: {str(e)}")
+
+def prepare_downloads(plant_names, api_key):
+    conn, cursor = get_db_connection()  # Get thread-specific DB connection
+
     for plant in plant_names:
-        train_dir = os.path.join(base_directory, 'train', plant.replace(' ', '_'))
-        test_dir = os.path.join(base_directory, 'test', plant.replace(' ', '_'))
+        train_dir = os.path.join('plant_images', 'train', plant.replace(' ', '_'))
+        test_dir = os.path.join('plant_images', 'test', plant.replace(' ', '_'))
         os.makedirs(train_dir, exist_ok=True)
         os.makedirs(test_dir, exist_ok=True)
+        
+        # Prepare download tasks and store in the database
+        response = requests.get("https://api.bing.microsoft.com/v7.0/images/search", headers={
+            'Ocp-Apim-Subscription-Key': api_key
+        }, params={
+            'q': plant + " plant",
+            'count': 45,
+            'imageType': 'photo'
+        })
+        results = response.json()
+        for idx, img in enumerate(results.get('value', [])):
+            file_path = os.path.join(train_dir if idx < 30 else test_dir, f"{plant.replace(' ', '_')}_{idx}.jpg")
+            cursor.execute('INSERT INTO downloads (plant_name, image_url, status, file_path) VALUES (?, ?, ?, ?)',
+                      (plant, img['contentUrl'], 'pending', file_path))
+        conn.commit()
 
-        total_images_downloaded = 0
-        offset = 0
-        while total_images_downloaded < (num_train + num_test):
-            params = {
-                'q': plant + " plant",
-                'count': min((num_train + num_test) - total_images_downloaded, 50),
-                'offset': offset,
-                'imageType': 'photo'
-            }
-            response = requests.get(endpoint, headers=headers, params=params)
-            results = response.json()
-            images = results.get('value', [])
+def worker(queue, api_key):
+    while not queue.empty():
+        task = queue.get()
+        download_images(task, api_key)
+        queue.task_done()
 
-            if not images:
-                break  # Break if no more images are available
-            
-            for idx, img in enumerate(images):
-                try:
-                    img_data = requests.get(img['contentUrl'])
-                    img_data.raise_for_status()  # To check for HTTP request errors
-                    # Determine if the image is for training or testing
-                    if total_images_downloaded < num_train:
-                        subdir = train_dir
-                    else:
-                        subdir = test_dir
-                    image_path = os.path.join(subdir, f'{plant.replace(" ", "_")}_{idx + total_images_downloaded}.jpg')
-                    with open(image_path, 'wb') as f:
-                        f.write(img_data.content)
-                except Exception as e:
-                    print(f"Failed to download {img['contentUrl']}: {str(e)}")
-            
-            total_images_downloaded += len(images)
-            offset += len(images)  # Increase offset for next batch
-            
-# Replace 'YOUR_API_KEY' with your Bing API key
-api_key = 'dec361ade8014ad7a4c84262094a76d4'
-url = "https://simple.m.wikipedia.org/wiki/List_of_plants_by_common_name"
-plant_names = get_plant_names(url)
-print(plant_names)
-download_images(plant_names, api_key)
+def main():
+    api_key = 'dec361ade8014ad7a4c84262094a76d4'
+    url = "https://simple.m.wikipedia.org/wiki/List_of_plants_by_common_name"
+    setup_database()
+    plant_names = get_plant_names(url)
+    prepare_downloads(plant_names, api_key)
+    
+    queue = Queue()
+    for plant in plant_names:
+        train_dir = os.path.join('plant_images', 'train', plant.replace(' ', '_'))
+        test_dir = os.path.join('plant_images', 'test', plant.replace(' ', '_'))
+        queue.put((plant, train_dir, test_dir))
+
+    for _ in range(4):  # Number of threads
+        t = threading.Thread(target=worker, args=(queue, api_key))
+        t.start()
+
+    queue.join()
+
+if __name__ == "__main__":
+    main()
