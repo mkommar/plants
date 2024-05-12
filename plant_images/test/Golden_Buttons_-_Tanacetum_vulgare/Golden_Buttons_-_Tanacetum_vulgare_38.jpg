@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<TITLE>Pictures of Plants 404 Error Page</TITLE>
+
+<meta NAME="Keywords" CONTENT="picsofplants, 404">
+<meta NAME="Description" CONTENT="Pictures of Plants 404 error page">
+<meta Name="Author" Content="Geoff Bryant">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<link rel=stylesheet href="00-styles.css">
+
+
+</head>
+
+<body>
+
+<center> 
+<div style="width:980px">
+
+<table width="100%" bgcolor="white">
+<tr valign="top">
+<td>
+<h1 style="font-family: Arial Black, gadget, sans-serif; text-align:left; margin-left:15pt">404 Page</h1>
+<h2 style="font-size:1.4em; text-align:left; margin-left:15pt">Royalty-Free Botanical and Horticultural Stock Photos</h2>
+</td>
+<td width="210">
+<a href="../"><img src="picsofplants.png" border="0" alt="PoP Logo"></a>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<h4>&nbsp;</h4>
+</td>
+</tr>
+</table>
+
+<table width="100%" bgcolor="#4f4f4f">
+<tr valign="top">
+<td width=120px"><h3><a href="categories.php?cat_id=1.htm">Plants</a></h3>
+<td width=275px"><h3><a href="categories.php?cat_id=2.htm">Horticultural Scenics</a></h3>
+<td width=215px"><h3><a href="categories.php?cat_id=3.htm">Pests and Diseases</a></h3>
+<td width=120px"><h3><a href="categories.php?cat_id=4.htm">Soils</a></h3>
+<td width=120px"><h3><a href="categories.php?cat_id=5.htm">Fungi</a></h3>
+<td width=120px"><h3><a href="categories.php?cat_id=6.htm">Lichens</a></h3>
+</td>
+</tr>
+</table>
+
+<center>
+<div style="width:980px">
+
+<table width="auto" bgcolor="#0d0d0d">
+<tr valign="top">
+<td>
+
+<h4>&nbsp;</h4>
+<h4>&nbsp;</h4>
+
+<h2 style="font-size:1.4em">Error 404 &mdash; The Requested Page Can't Be Found</h2>
+<h3 style="font-size:1.2em">But don't give up, it's probably just been moved. Please use the navigation tools above to find what you're looking for or visit the <a href="../">Home Page</a>.</h3>
+
+<h4>&nbsp;</h4>
+<h4>&nbsp;</h4>
+<h4>&nbsp;</h4>
+
+<h4 style="font-size:13">All images copyright of Pictures of Plants Photo Library. No unauthorised use permitted.</h4>
+
+<h4>&nbsp;</h4>
+
+</td>
+</tr>
+</table>
+<center>
+
+</body>
+</html>
