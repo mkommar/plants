@@ -4,6 +4,9 @@ Python 3.10.12
 Bing API key for image search
 ```
 
+For Apple Silicon:
+```pip install torch --pre```
+
 Install requirements:
 ```pip install -r requirements.txt```
 

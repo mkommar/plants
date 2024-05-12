@@ -28,7 +28,7 @@ num_classes = len(training_dataset.classes)  # number of plant types
 model.fc = nn.Linear(num_features, num_classes)
 
 # Move model to GPU if available
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu"))
 model = model.to(device)
 
 criterion = nn.CrossEntropyLoss()
