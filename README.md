@@ -33,3 +33,8 @@ Epoch 9/10 Loss: 0.9640 Acc: 0.7348
 Epoch 10/10 Loss: 0.8566 Acc: 0.7579
 Test Accuracy: 0.2444
 ```
+
+Metadata and state data is saved and can be used between code and processor types.
+
+Run the webserver and try uploading an images:
+```web.py```
