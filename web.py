@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template_string, redirect, url_for, flash
+from flask import Flask, request, jsonify, render_template_string, flash
 from werkzeug.utils import secure_filename
 import torch
 from torchvision import models, transforms
@@ -7,11 +7,13 @@ import json
 import io
 
 app = Flask(__name__)
-app.secret_key = 'supersecretkey'  # Necessary for flash messages
+app.secret_key = 'supersecretkey'  # Necessary for session management and flash messages
 
 # Load the metadata and model
 with open('final_model_metadata.json', 'r') as f:
     metadata = json.load(f)
+class_to_idx = metadata['class_to_index']
+idx_to_class = {v: k for k, v in class_to_idx.items()}  # Reverse the dictionary for index to class mapping
 
 # Initialize the model based on metadata
 model = models.resnet18(pretrained=False)
@@ -44,8 +46,8 @@ def predict_image(image_bytes):
     with torch.no_grad():
         output = model(img)
         _, predicted = torch.max(output.data, 1)
-        return predicted.item()
-
+        predicted_class = idx_to_class[predicted.item()]
+        return predicted_class, predicted
 
 @app.route('/', methods=['GET', 'POST'])  # Handle both GET and POST on the same route
 def index():
@@ -54,9 +56,9 @@ def index():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             image_bytes = file.read()
-            prediction = predict_image(image_bytes)
-            if prediction is not None:
-                flash(f'Plant class predicted: {prediction}', 'info')
+            predicted_class = predict_image(image_bytes)
+            if predicted_class is not None:
+                flash(f'Plant class predicted: {predicted_class}', 'info')
             else:
                 flash('Invalid image format or corrupted image', 'error')
         else:
@@ -95,7 +97,6 @@ def index():
     </body>
     </html>
     """)
-
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'png', 'jpg', 'jpeg', 'gif'}

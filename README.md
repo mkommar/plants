@@ -1,3 +1,16 @@
+**Running**
+Everything you need to evaluate is ready.
+For Apple Silicon:
+```pip install torch --pre```
+
+Install requirements:
+```pip install -r requirements.txt```
+```web.py```
+
+Select an image from the ```plant_images/train``` or ```plant_images/test``` to evaluate. The defualt location is ```http://127.0.0.1:8080```
+
+**Training**
+---
 Requirements:
 ```
 Python 3.10.12
