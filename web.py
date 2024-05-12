@@ -19,8 +19,8 @@ idx_to_class = {v: k for k, v in class_to_idx.items()}  # Reverse the dictionary
 model = models.resnet18(pretrained=False)
 model.fc = torch.nn.Linear(metadata['fc_features'], metadata['num_classes'])
 
-# Load the model state
-model.load_state_dict(torch.load('final_model_state_dict.pth'))
+# Load the model state in CPU first for compatibility, then move to appropriate device
+model.load_state_dict(torch.load('final_model_state_dict.pth', map_location='cpu'))
 model.eval()
 
 # Set up device
