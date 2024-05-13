@@ -1,9 +1,10 @@
+import os
 import torch
 from torchvision import datasets, transforms, models
 from torch.utils.data import DataLoader
 import torch.nn as nn
 import torch.optim as optim
-import json  # Import JSON module to handle metadata saving
+import json
 from tqdm import tqdm
 
 # Transformations for the input data
@@ -14,29 +15,54 @@ transform = transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
+# Function to filter directories based on image count
+def filter_directories(base_path, min_count):
+    filtered_classes = {}
+    for class_dir in os.listdir(base_path):
+        class_path = os.path.join(base_path, class_dir)
+        if os.path.isdir(class_path):
+            num_images = len([name for name in os.listdir(class_path) if os.path.isfile(os.path.join(class_path, name))])
+            if num_images >= min_count:
+                filtered_classes[class_dir] = num_images
+    return filtered_classes
+
 # Load the datasets with ImageFolder
-training_dataset = datasets.ImageFolder('plant_images/train', transform=transform)
-testing_dataset = datasets.ImageFolder('plant_images/test', transform=transform)
+train_base_path = 'plant_images/train'
+test_base_path = 'plant_images/test'
 
-print("Class to index mapping:", training_dataset.class_to_idx)
+# Filter classes
+train_classes = filter_directories(train_base_path, 10)
+test_classes = filter_directories(test_base_path, 5)
 
-# Define the dataloaders
+# Get common classes with enough images
+common_classes = set(train_classes.keys()).intersection(set(test_classes.keys()))
+
+# Ensure there are common classes with enough images
+if not common_classes:
+    raise RuntimeError("No valid classes with the required number of images found.")
+
+# Filter function for datasets
+def is_valid_file(path):
+    return path.split(os.sep)[-2] in common_classes
+
+# Initialize datasets
+training_dataset = datasets.ImageFolder(train_base_path, transform=transform, is_valid_file=is_valid_file)
+testing_dataset = datasets.ImageFolder(test_base_path, transform=transform, is_valid_file=is_valid_file)
+
+# Define dataloaders
 train_loader = DataLoader(training_dataset, batch_size=32, shuffle=True)
 test_loader = DataLoader(testing_dataset, batch_size=32, shuffle=True)
 
-# Initialize the model: ResNet18 pretrained on ImageNet
+# Initialize and configure the model
 model = models.resnet18(pretrained=True)
 num_features = model.fc.in_features
-num_classes = len(training_dataset.classes)
-
-# Replace the fully connected layer for our specific class number
-model.fc = nn.Linear(num_features, num_classes)
+model.fc = nn.Linear(num_features, len(common_classes))
 
 # Move model to the best available device
 device = torch.device("cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu"))
 model = model.to(device)
 
-# Define the loss function and optimizer
+# Loss function and optimizer
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
 
@@ -64,13 +90,12 @@ def train_model(model, criterion, optimizer, num_epochs=30):
         for inputs, labels in progress_bar:
             inputs = inputs.to(device)
             labels = labels.to(device)
-            
             optimizer.zero_grad()
             outputs = model(inputs)
             loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()
-            
+
             _, preds = torch.max(outputs, 1)
             loss_item = loss.item() * inputs.size(0)
             corrects_item = torch.sum(preds == labels.data)
@@ -105,7 +130,7 @@ def evaluate_model(model):
     print(f'Test Accuracy: {acc:.4f}')
 
 # Train the model
-train_model(model, criterion, optimizer, num_epochs=1000)
+train_model(model, criterion, optimizer, num_epochs=3000)
 
 # Evaluate the model
 evaluate_model(model)

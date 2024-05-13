@@ -35,18 +35,36 @@ def setup_database():
     print("Database setup completed.")
 
 def get_plant_names(url):
-    """Fetch plant names from the given Wikipedia URL."""
     headers = {'User-Agent': 'CoolBot/0.0 (https://example.org/coolbot/; coolbot@example.org)'}
     response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.text, 'html.parser')
     section_div = soup.find('section', class_='mf-section-0').find('div')
 
     plants = []
+
+    def extract_names(li):
+        # Extract clean text from each <li> and handle nested <ul>
+        text = li.get_text(" ", strip=True)  # Using a space as a separator
+        nested_ul = li.find('ul')
+        if nested_ul:
+            # Replace text of nested <ul> with nothing to avoid duplication
+            nested_text = nested_ul.get_text(" ", strip=True)
+            text = text.replace(nested_text, "").strip()
+        return text
+
     for ul in section_div.find_all('ul', recursive=False):
         for li in ul.find_all('li', recursive=False):
-            text = li.get_text(" ", strip=True)
-            plants.append(text)
-            print(f"Plant found: {text}")
+            text = extract_names(li)
+            if text:
+                plants.append(text)
+            # Also process any nested <ul> within the <li>
+            nested_ul = li.find('ul')
+            if nested_ul:
+                for nested_li in nested_ul.find_all('li', recursive=False):
+                    nested_text = extract_names(nested_li)
+                    if nested_text:
+                        plants.append(nested_text)
+                    
     return plants
 
 def download_images(task, api_key):
@@ -154,7 +172,7 @@ def check_existing_data():
 
 def main():
     """Main function to orchestrate the setup and processing of download tasks."""
-    api_key = 'dec361ade8014ad7a4c84262094a76d4'
+    api_key = '3f9cca9ada6743eba8033b9703c8a216'
     url = "https://simple.m.wikipedia.org/wiki/List_of_plants_by_common_name"
     setup_database()
 
@@ -171,7 +189,7 @@ def main():
         queue.put((plant, train_dir, test_dir))
 
     print("Starting worker threads.")
-    for _ in range(128):
+    for _ in range(256):
         t = threading.Thread(target=worker, args=(queue, api_key))
         t.start()
 
