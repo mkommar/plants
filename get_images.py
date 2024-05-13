@@ -167,7 +167,7 @@ def main():
         queue.put((plant, train_dir, test_dir))
 
     print("Starting worker threads.")
-    for _ in range(16):
+    for _ in range(128):
         t = threading.Thread(target=worker, args=(queue, api_key))
         t.start()
 
