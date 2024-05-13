@@ -59,7 +59,7 @@ def download_images(task, api_key):
 
     headers = {
         'User-Agent': 'Mozilla/5.0 (compatible; YourBot/1.0; +http://yourdomain.com/bot.html)',
-        'Accept': '*/*'  # Accept any media type
+        'Accept': 'Accept: image/*'  # Accept any media type
     }
 
     for image in pending_images:
@@ -67,6 +67,10 @@ def download_images(task, api_key):
         try:
             response = requests.get(image_url, headers=headers)
             response.raise_for_status()  # Check for HTTP errors
+            if not os.path.exists(os.path.dirname(image[3])):
+                os.makedirs(os.path.dirname(image[3]))
+                logging.info(f"Directory created: {os.path.dirname(image[3])}")
+
             with open(file_path, 'wb') as f:
                 f.write(response.content)
             cursor.execute('UPDATE downloads SET status="completed" WHERE image_url=?', (image_url,))
