@@ -1,3 +1,4 @@
+import random
 import sqlite3
 import requests
 import logging
@@ -17,6 +18,7 @@ def get_new_image_url(plant, api_key):
     params = {
         'q': plant + " plant",
         'count': 1,  # Fetch only one image link
+        'offset': random.randint(1, 100),  # Random offset to likely get a different image
         'imageType': 'photo'
     }
     response = requests.get("https://api.bing.microsoft.com/v7.0/images/search", headers=headers, params=params)
