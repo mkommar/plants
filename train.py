@@ -105,7 +105,7 @@ def evaluate_model(model):
     print(f'Test Accuracy: {acc:.4f}')
 
 # Train the model
-train_model(model, criterion, optimizer, num_epochs=100)
+train_model(model, criterion, optimizer, num_epochs=1000)
 
 # Evaluate the model
 evaluate_model(model)
