@@ -50,26 +50,55 @@ def get_plant_names(url):
     return plants
 
 def download_images(task, api_key):
-    """Download images for a given plant using Bing Image Search API."""
+    """Download images for a given plant using Bing Image Search API with retry on 403 errors, handling 406 errors."""
     plant, train_dir, test_dir = task
     conn, cursor = get_db_connection()
 
     cursor.execute('SELECT * FROM downloads WHERE plant_name=? AND status="pending"', (plant,))
-    pending = cursor.fetchall()
+    pending_images = cursor.fetchall()
 
-    print(f"Starting download for {plant}. {len(pending)} images pending.")
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (compatible; YourBot/1.0; +http://yourdomain.com/bot.html)',
+        'Accept': '*/*'  # Accept any media type
+    }
 
-    for item in pending:
+    for image in pending_images:
+        image_url, file_path = image[1], image[3]
         try:
-            img_data = requests.get(item[1])
-            img_data.raise_for_status()
-            with open(item[3], 'wb') as f:
-                f.write(img_data.content)
-            cursor.execute('UPDATE downloads SET status="completed" WHERE image_url=?', (item[1],))
+            response = requests.get(image_url, headers=headers)
+            response.raise_for_status()  # Check for HTTP errors
+            with open(file_path, 'wb') as f:
+                f.write(response.content)
+            cursor.execute('UPDATE downloads SET status="completed" WHERE image_url=?', (image_url,))
             conn.commit()
-            print(f"Image downloaded and saved to {item[3]}")
+            logging.info(f"Image downloaded and saved to {file_path}")
+        except requests.exceptions.HTTPError as e:
+            if e.response.status_code == 403:
+                logging.warning(f"403 Forbidden received for URL: {image_url}. Retrying with a new URL.")
+                # Additional logic to handle retries or fetch new URLs
+            elif e.response.status_code == 406:
+                logging.error(f"406 Not Acceptable Error for URL: {image_url}. Check the 'Accept' headers.")
+            else:
+                logging.error(f"Failed to download {image_url}: {e}")
         except Exception as e:
-            print(f"Failed to download {item[1]}: {str(e)}")
+            logging.error(f"General error during download for {image_url}: {e}")
+
+def get_new_image_url(plant, api_key):
+    """Fetch a new image URL from Bing Image Search API."""
+    params = {
+        'q': f"{plant} plant",
+        'count': 1,
+        'offset': random.randint(1, 100),  # Random offset to likely get a different image
+        'imageType': 'photo',
+        'mkt': 'en-US'
+    }
+    headers = {'Ocp-Apim-Subscription-Key': api_key}
+    response = requests.get("https://api.bing.microsoft.com/v7.0/images/search", headers=headers, params=params)
+    if response.status_code == 200:
+        data = response.json()
+        if data['value']:
+            return data['value'][0]['contentUrl']
+    return None
 
 def prepare_downloads(plant_names, api_key):
     """Prepare download tasks for each plant and store them in the database."""
@@ -138,7 +167,7 @@ def main():
         queue.put((plant, train_dir, test_dir))
 
     print("Starting worker threads.")
-    for _ in range(12):
+    for _ in range(16):
         t = threading.Thread(target=worker, args=(queue, api_key))
         t.start()
 
