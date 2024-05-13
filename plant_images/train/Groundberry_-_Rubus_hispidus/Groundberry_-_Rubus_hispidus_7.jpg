@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="https://biology.appstate.edu/profiles/asu/themes/custom/asu_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="rights" content="2024 Appalachian State University" />
+<link rel="canonical" href="https://biology.appstate.edu/home" />
+<link rel="shortlink" href="https://biology.appstate.edu/node/1" />
+<meta property="og:site_name" content="Welcome" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://biology.appstate.edu/home" />
+<meta property="og:title" content="Welcome" />
+<meta name="dcterms.title" content="Welcome" />
+<meta name="dcterms.type" content="Text" />
+<meta name="dcterms.format" content="text/html" />
+  <title>Department of Biology | Appalachian State University</title>
+  <link type="text/css" rel="stylesheet" href="https://biology.appstate.edu/sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://biology.appstate.edu/sites/default/files/css/css_40FY7FwcYbQAuvNDYLDgCFEYNI226cLFqOjzTwiRmBY.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://biology.appstate.edu/sites/default/files/css/css_F-UH97MdLBSVKC5-Z-aTI5JB8_KbO7V_aSMUAuA9hJI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Libre+Baskerville%7COpen+Sans:400,400italic,700,700italic" media="all" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.5/dist/css/bootstrap.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unicorn-fail/drupal-bootstrap-styles@0.0.2/dist/3.3.1/7.x-3.x/drupal-bootstrap.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://biology.appstate.edu/sites/default/files/css/css_n3dXdy5bEQddysb4dbh8WVY7jUcUwz-jqxkjmxM_Q24.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://biology.appstate.edu/sites/default/files/css/css_rd_83aGGuhW14Zpq3yk3aC17wbiyEKbL8_RfLvUHZA8.css" media="all" />
+  <!-- HTML5 element support for IE6-8 -->
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="https://biology.appstate.edu/sites/default/files/js/js_6UR8aB1w5-y_vdUUdWDWlX2QhWu_qIXlEGEV48YgV-c.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.5/dist/js/bootstrap.min.js"></script>
+<script src="https://biology.appstate.edu/sites/default/files/js/js_gHk2gWJ_Qw_jU2qRiUmSl7d8oly1Cx7lQFrqcp3RXcI.js"></script>
+<script src="https://biology.appstate.edu/sites/default/files/js/js_S2E98rhsVvpw9AwS36r0oZwKOpX_hXZSFyOwJPevvvM.js"></script>
+<script src="https://www.googletagmanager.com/gtag/js?id=UA-20890631-25"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "UA-20890631-25", {"groups":"default","anonymize_ip":true});</script>
+<script src="https://biology.appstate.edu/sites/default/files/js/js_YXcYPWcNbin7118cn0dtn9j9x8plvtJ3YD9B3eMWQhY.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"asu_theme","theme_token":"elHNiFCRDz7aAMubUMHH2gfKatRv8mJZf7kPrp-nAwo","js":{"profiles\/asu\/themes\/contrib\/bootstrap\/js\/bootstrap.js":1,"profiles\/asu\/modules\/contrib\/jquery_update\/replace\/jquery\/2.2\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"profiles\/asu\/modules\/contrib\/jquery_update\/js\/jquery_browser.js":1,"https:\/\/cdn.jsdelivr.net\/npm\/bootstrap@3.3.5\/dist\/js\/bootstrap.min.js":1,"profiles\/asu\/modules\/contrib\/entityreference\/js\/entityreference.js":1,"profiles\/asu\/libraries\/jwplayer\/jwplayer.js":1,"profiles\/asu\/libraries\/jwplayer\/jwplayer.html5.js":1,"profiles\/asu\/modules\/contrib\/fancybox\/fancybox.js":1,"profiles\/asu\/libraries\/fancybox\/source\/jquery.fancybox.pack.js":1,"profiles\/asu\/libraries\/fancybox\/lib\/jquery.mousewheel-3.0.6.pack.js":1,"profiles\/asu\/libraries\/fancybox\/source\/helpers\/jquery.fancybox-thumbs.js":1,"profiles\/asu\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"https:\/\/www.googletagmanager.com\/gtag\/js?id=UA-20890631-25":1,"0":1,"profiles\/asu\/themes\/custom\/asu_theme\/build\/js\/asu_theme.js":1},"css":{"modules\/system\/system.base.css":1,"profiles\/asu\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/asu\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"profiles\/asu\/modules\/contrib\/video_filter\/video_filter.css":1,"profiles\/asu\/modules\/contrib\/views\/css\/views.css":1,"profiles\/asu\/modules\/contrib\/media\/modules\/media_wysiwyg\/css\/media_wysiwyg.base.css":1,"profiles\/asu\/modules\/contrib\/ctools\/css\/ctools.css":1,"profiles\/asu\/libraries\/fancybox\/source\/jquery.fancybox.css":1,"profiles\/asu\/libraries\/fancybox\/source\/helpers\/jquery.fancybox-thumbs.css":1,"profiles\/asu\/modules\/contrib\/panels\/css\/panels.css":1,"profiles\/asu\/modules\/contrib\/node_embed\/plugins\/node_embed\/node_embed.css":1,"\/\/netdna.bootstrapcdn.com\/font-awesome\/4.7.0\/css\/font-awesome.min.css":1,"\/\/fonts.googleapis.com\/css?family=Libre+Baskerville%7COpen+Sans:400,400italic,700,700italic":1,"https:\/\/cdn.jsdelivr.net\/npm\/bootstrap@3.3.5\/dist\/css\/bootstrap.min.css":1,"https:\/\/cdn.jsdelivr.net\/npm\/@unicorn-fail\/drupal-bootstrap-styles@0.0.2\/dist\/3.3.1\/7.x-3.x\/drupal-bootstrap.min.css":1,"profiles\/asu\/themes\/custom\/asu_theme\/build\/css\/style.min.css":1,"profiles\/asu\/themes\/custom\/asu_theme\/build\/css\/style-extra.css":1,"public:\/\/css_injector\/css_injector_1.css":1,"public:\/\/css_injector\/css_injector_2.css":1,"public:\/\/css_injector\/css_injector_3.css":1}},"fancybox":{"options":{"padding":0,"margin":5},"helpers":{"thumbs":{"width":50,"height":50,"position":"bottom"}}},"googleanalytics":{"account":["UA-20890631-25"],"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"bootstrap":{"anchorsFix":"0","anchorsSmoothScrolling":"0","formHasError":1,"popoverEnabled":"0","popoverOptions":{"animation":1,"html":0,"placement":"right","selector":"","trigger":"click","triggerAutoclose":1,"title":"","content":"","delay":0,"container":"body"},"tooltipEnabled":"0","tooltipOptions":{"animation":1,"html":0,"placement":"auto left","selector":"","trigger":"hover focus","delay":0,"container":"body"}}});</script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2G6KCS3CHT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2G6KCS3CHT');
+    </script>
+  </head>
+<body class="html front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-1 node-type-panel primary-nav" >
+  
+  <div id="skip-link">
+    <a href="#main-content">Skip to main content</a>
+  </div>
+    
+<div class="wrapper wrapper-dark" id="branding-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <a href="http://appstate.edu/" title="Appalachian State University">
+          <img src="https://api.appstate.edu/assets/appstate-new-1200.svg"
+               class="branding-university-logo img-responsive"
+               alt="Appalachian State University" />
+        </a>
+      </div>
+              <div class="branding-search col-xs-6">
+
+          <form class="form-inline" method="get" action="https://cse.appstate.edu/">
+            <div class="input-group">
+              <label for="q" class="sr-only">Search terms</label>
+              <input type="text" id="q" name="q" placeholder="Search terms" class="form-control" aria-label="Search terms">
+              <div class="input-group-btn">
+                <button type="submit" class="btn btn-default">
+                  <i class="fa fa-search"><span class="sr-only">Search</span></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+          </div>
+  </div>
+</div>
+
+<div class="wrapper wrapper-dark" id="site-name-wrapper">
+  <div class="container">
+    <div class="row bottom-align">
+      <div class="col-xs-10 col-sm-12">
+        <h1><a href="/" title="Home">Department of Biology</a></h1>
+      </div>
+              <div class="col-xs-2">
+          <button type="button"
+                  class="navbar-toggle collapsed"
+                  data-toggle="collapse"
+                  data-target="#primary_menu_collapse"
+                  aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+          </div>
+  </div>
+</div>
+
+<div class="wrapper navbar navbar-default" id="primary-menu-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="navbar-collapse collapse" id="primary_menu_collapse">
+          <nav>
+            <div class="block block-menu menu-block-wrapper menu-block-asu_core_primary_menu menu-name-main-menu parent-mlid-0 menu-level-1">
+  <ul class="nav navbar-nav"><li class="first leaf has-children menu-mlid-693"><a href="/about">About</a></li>
+<li class="leaf has-children menu-mlid-699"><a href="/academics">Academics</a></li>
+<li class="leaf has-children menu-mlid-694"><a href="/students">Students</a></li>
+<li class="leaf has-children menu-mlid-700"><a href="/faculty-staff" title="">Faculty &amp; Staff</a></li>
+<li class="leaf has-children menu-mlid-706"><a href="/research">Research &amp; Facilities</a></li>
+<li class="leaf has-children menu-mlid-765"><a href="/news">News &amp; Events</a></li>
+<li class="last leaf menu-mlid-695"><a href="/contact">Contact</a></li>
+</ul></div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper" id="page-title-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Welcome </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="wrapper wrapper-background" id="primary-header-image-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="header-image-carousel" class="carousel slide" data-ride="carousel" data-interval="10000">
+                    <ol class="carousel-indicators">
+                          <li data-target="#header-image-carousel"
+                  class="active"                  data-slide-to="0"></li>
+                          <li data-target="#header-image-carousel"
+                                    data-slide-to="1"></li>
+                          <li data-target="#header-image-carousel"
+                                    data-slide-to="2"></li>
+                      </ol>
+          
+          <div class="carousel-inner" role="listbox">
+                          <div class="item active">
+                <img src="https://biology.appstate.edu/sites/default/files/styles/asu-core-header-photo/public/biology-homepage-01-1155x400.jpg?itok=Mj8sU7ip" alt="Header image" class="img-responsive">              </div>
+                          <div class="item ">
+                <img src="https://biology.appstate.edu/sites/default/files/styles/asu-core-header-photo/public/research-3534.jpg?itok=SOl23xBb" alt="student in research lab" class="img-responsive">              </div>
+                          <div class="item ">
+                <img src="https://biology.appstate.edu/sites/default/files/styles/asu-core-header-photo/public/biology_research1_0.jpg?itok=HasiMeSf" alt="fish researchers in a stream" class="img-responsive">              </div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper wrapper-background" id="main-wrapper">
+  <div class="container">
+    <div class="row">
+
+      <div id="page-content"  class="col-xs-12 col-sm-8 col-md-9 col-sm-push-4 col-md-push-3">
+                <a id="main-content"></a>
+
+        
+                          
+        
+        
+          <div class="region region-content">
+    <div id="block-system-main" class="block block-system clearfix">
+
+    <div class="block-content">
+    <div id="node-1" class="node node-panel clearfix">
+    <div class="container-fluid">
+  <div class="panel-display panel-2col-bricks row clearfix" >
+    <div class="panel-panel panel-col-top col-xs-12">
+      <div class="inside"><div class="panel-pane pane-custom pane-1"  >
+  
+      
+  
+  <div class="pane-content">
+    
+<p>The <strong>Department of Biology</strong> is a community of teacher-scholars, with faculty representing the full breadth of biological specializations &mdash; from molecular genetics to landscape/ecosystem ecology.</p>
+
+<p>Our goal is to provide hands-on experiences through classroom laboratories and undergraduate research.&nbsp; Our faculty and our 45 graduate students welcome our undergraduate majors to engage in independent research ongoing in 23 labs, plant, animal and fungal research/teaching collections, a greenhouse, a sixty-seven acre Nature Preserve adjacent to campus and larger land holdings in the area, as well as access to extensive globally significant surrounding state and federal parks and forests.&nbsp;</p>
+
+<p>We seek to enable our graduates to gain sound scientific knowledge, learn the skills needed to create new knowledge, the excitement and appreciation of scientific discovery, and the ability to convey that information and enthusiasm to society.&nbsp; We are dedicated to engaging students in outstanding teaching and we believe that our research and discovery inform the science that we teach.</p>
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-block pane-bean-mongo-the-corpse-flower"  >
+  
+      
+  
+  <div class="pane-content">
+    
+<div class="panel panel-default card dark">
+  <div class="panel-body">
+
+                  <div class="card-block">
+          <a href="https://biology.appstate.edu/research-facilities/biology-greenhouse/corpse-flower-bloom-november-2023"><img class="img-responsive" src="https://biology.appstate.edu/sites/default/files/corpse_flower_cr.jpg" alt="Mongo, the Corpse Flower" /></a><h2 class="card-title"><a href="https://biology.appstate.edu/research-facilities/biology-greenhouse/corpse-flower-bloom-november-2023">Mongo, the Corpse Flower</a></h2><div class="card-body">
+<p>Appalachian State University's Titan Arum, or "corpse flower," is expected to bloom this November at the Department of Biology's Greenhouse. The bloom will be the plant's first since it arrived in Boone over a decade ago.</p>
+</div>        </div>
+          
+    
+  </div>
+</div>
+  </div>
+
+  
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="panel-display panel-2col-bricks row clearfix" >
+    <div class="panel-panel panel-col-first col-xs-12 col-md-6">
+      <div class="inside"><div class="panel-pane pane-block pane-bean-programs-of-study"  >
+  
+      
+  
+  <div class="pane-content">
+    
+<div class="panel panel-default card dark">
+  <div class="panel-body">
+
+                  <div class="card-block">
+          <a href="/academics"><img class="img-responsive" src="https://biology.appstate.edu/sites/default/files/study_posters.jpg" alt="Programs of Study" /></a><h2 class="card-title"><a href="/academics">Programs of Study</a></h2>        </div>
+          
+    
+  </div>
+</div>
+  </div>
+
+  
+  </div>
+</div>
+    </div>
+
+    <div class="panel-panel panel-col-last col-xs-12 col-md-6">
+      <div class="inside"><div class="panel-pane pane-block pane-bean-fall-color-report"  >
+  
+      
+  
+  <div class="pane-content">
+    
+<div class="panel panel-default card dark">
+  <div class="panel-body">
+
+                  <div class="card-block">
+          <a href="/fall-colors"><img class="img-responsive" src="https://biology.appstate.edu/sites/default/files/fallcolor_block.jpg" alt="Fall Color Report" /></a><h2 class="card-title"><a href="/fall-colors">Fall Color Report</a></h2>        </div>
+          
+    
+  </div>
+</div>
+  </div>
+
+  
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="panel-display panel-2col-bricks row clearfix" >
+    <div class="panel-panel panel-col-middle col-xs-12">
+      <div class="inside"><div class="panel-pane pane-node"  >
+  
+        <h2 class="pane-title">
+      Department Spotlights    </h2>
+    
+  
+  <div class="pane-content">
+    <div id="node-651" class="node node-panel clearfix">
+    
+<div class="container-fluid">
+  <div class="panel-display panel-3col-33-stacked clearfix row" >
+    <div class="panel-panel panel-col-first col-xs-12 col-md-4">
+      <div class="inside"><div class="panel-pane pane-block pane-views-spotlights-block"  >
+  
+        <h3 class="pane-title">
+      Faculty &amp; Staff    </h3>
+    
+  
+  <div class="pane-content">
+    <div class="view view-spotlights view-id-spotlights view-display-id-block view-dom-id-53838fa640da3a9f5e7d2e04a3f133d4">
+        
+  
+  
+      <div class="view-content">
+      
+
+<div id="views-bootstrap-thumbnail-1" class="views-bootstrap-thumbnail-plugin-style">
+  
+          <div class="row">
+                  <div class="col col-sm-12 col-md-12">
+            <div class="thumbnail">
+                
+          <div class="field-asu-news-thumbnail"><div class="field-items"><div class="field-item even"><a href="/news/dr-suzanna-br%C3%A4uer"><img class="img-responsive" src="https://biology.appstate.edu/sites/default/files/styles/spotlight_preview__300x300_/public/asu_news/brauer6.png?itok=UjS1OeuF" width="300" height="300" alt="Dr. Brauer in a cave" /></a></div></div></div>    
+  <div class="views-field views-field-title">        <h4 class="field-content"><a href="/news/dr-suzanna-br%C3%A4uer">Dr. Suzanna Bräuer</a></h4>  </div>  
+          <p><div class="field-asu-news-body"><div class="field-items"><div class="field-item even">
+<p><strong>Why did you become a Biologist (and specifically the type of biologist you are)?</strong></p>
+
+<p>As a child I always loved the outdoors and eagerly explored crawdads in the stream and a resident...</p></div></div></div></p>              </div>
+          </div>
+              </div>
+    
+  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      
+<hr>
+
+<p><em>Read more <a href="https://biology.appstate.edu/about/spotlights">Faculty &amp; Staff spotlights</a></em></p>
+    </div>
+  
+  
+</div>  </div>
+
+  
+  </div>
+</div>
+    </div>
+
+    <div class="panel-panel panel-col col-xs-12 col-md-4">
+      <div class="inside"><div class="panel-pane pane-block pane-views-spotlights-block-1"  >
+  
+        <h3 class="pane-title">
+      Alumni    </h3>
+    
+  
+  <div class="pane-content">
+    <div class="view view-spotlights view-id-spotlights view-display-id-block_1 view-dom-id-da966004565e82f8d7b35fac0f7be868">
+        
+  
+  
+      <div class="view-content">
+      
+
+<div id="views-bootstrap-thumbnail-2" class="views-bootstrap-thumbnail-plugin-style">
+  
+          <div class="row">
+                  <div class="col col-sm-12 col-md-12">
+            <div class="thumbnail">
+                
+          <div class="field-asu-news-thumbnail"><div class="field-items"><div class="field-item even"><a href="/news/dr-nicole-hughes"><img class="img-responsive" src="https://biology.appstate.edu/sites/default/files/styles/spotlight_preview__300x300_/public/asu_news/12031987_878531552201718_5053785203207605963_n_0-2.jpg?itok=z1oT0CYG" width="300" height="300" alt="Dr. Nicole Hughes" /></a></div></div></div>    
+  <div class="views-field views-field-title">        <h4 class="field-content"><a href="/news/dr-nicole-hughes">Dr. Nicole Hughes</a></h4>  </div>  
+          <p><div class="field-asu-news-body"><div class="field-items"><div class="field-item even">
+<p><strong>What do you currently do?</strong></p>
+
+<p>I am currently an Assistant Professor of Biology at High Point University (in High Point, NC), and teach courses in General Botany, Ecology and Evolutionary...</p></div></div></div></p>              </div>
+          </div>
+              </div>
+    
+  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      
+<hr>
+
+<p><em>Read more <a href="https://biology.appstate.edu/about/spotlights">Alumni spotlights</a></em></p>
+    </div>
+  
+  
+</div>  </div>
+
+  
+  </div>
+</div>
+    </div>
+
+    <div class="panel-panel panel-col-last col-xs-12 col-md-4">
+      <div class="inside"><div class="panel-pane pane-block pane-views-spotlights-block-2"  >
+  
+        <h3 class="pane-title">
+      Graduate Students    </h3>
+    
+  
+  <div class="pane-content">
+    <div class="view view-spotlights view-id-spotlights view-display-id-block_2 view-dom-id-2d3c3bc3cd7431fd6c7e0bb98777e035">
+        
+  
+  
+      <div class="view-content">
+      
+
+<div id="views-bootstrap-thumbnail-3" class="views-bootstrap-thumbnail-plugin-style">
+  
+          <div class="row">
+                  <div class="col col-sm-12 col-md-12">
+            <div class="thumbnail">
+                
+          <div class="field-asu-news-thumbnail"><div class="field-items"><div class="field-item even"><a href="/news/michael-thomas-alicia-ramsaran"><img class="img-responsive" src="https://biology.appstate.edu/sites/default/files/styles/spotlight_preview__300x300_/public/asu_news/thomasandramsaran.jpg?itok=M56N8Dmr" width="300" height="300" alt="Michael Thomas and Alicia Ramsaran" /></a></div></div></div>    
+  <div class="views-field views-field-title">        <h4 class="field-content"><a href="/news/michael-thomas-alicia-ramsaran">Michael Thomas &amp; Alicia Ramsaran</a></h4>  </div>  
+          <p><div class="field-asu-news-body"><div class="field-items"><div class="field-item even">
+<p><img src="https://biology.appstate.edu/sites/biology.appstate.edu/files/thomas-2.jpg" alt="Michael Thomas with microscope on a riverside" class="img-responsive pull-left" /></p>
+
+<h3>Michael Thomas</h3>
+
+<p>...</p></div></div></div></p>              </div>
+          </div>
+              </div>
+    
+  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      
+<hr>
+
+<p><em>Read more <a href="https://biology.appstate.edu/about/spotlights">Graduate Student spotlights</a></em></p>
+    </div>
+  
+  
+</div>  </div>
+
+  
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="panel-display panel-2col-bricks row clearfix" >
+    <div class="panel-panel panel-col-first col-xs-12 col-md-6">
+      <div class="inside"></div>
+    </div>
+
+    <div class="panel-panel panel-col-last col-xs-12 col-md-6">
+      <div class="inside"></div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div> 
+</div> <!-- /.block -->
+  </div>
+      </div>
+
+              <aside id="sidebar-first" class="col-xs-12 col-sm-4 col-md-3 col-sm-pull-8 col-md-pull-9">
+                      <div class="region region-sidebar-first">
+    <div id="block-block-1" class="block block-block clearfix">
+
+    <div class="block-content">
+    
+<p><a href="https://biology.appstate.edu/about"><strong>Welcome from the Chair</strong></a></p>
+
+<p><strong>Dr. Ava J. Udvadia</strong></p>
+
+<p><a href="mailto:udvadiaaj@appstate.edu">udvadiaaj@appstate.edu</a></p>
+  </div> 
+</div> <!-- /.block -->
+<div id="block-block-2" class="block block-block clearfix">
+
+      <div class="block-title">
+            <h2 class="block-title">Resources</h2>
+          </div>
+    <div class="block-content">
+    
+<p><a href="https://cas.appstate.edu/students">Academic Advising</a></p>
+
+<p><a href="https://financialaid.appstate.edu/">Financial Aid</a></p>
+
+<p><a href="https://graduate.appstate.edu/">Graduate School</a></p>
+
+<p><a href="https://registrar.appstate.edu/">Registrar's Office</a></p>
+
+<p><a href="https://counseling.appstate.edu/%20">Counseling Center</a></p>
+
+<p><a href="https://studentlearningcenter.appstate.edu/students/tutoring-support-services">Student Learning Center</a></p>
+
+<p><a href="https://docs.google.com/document/d/1viefnxIs8GU0fI2lJtQ5L4tECiyBJY3R/edit?usp=sharing&amp;ouid=109227937920359550359&amp;rtpof=true&amp;sd=true">Lab Safety Statement</a></p>
+  </div> 
+</div> <!-- /.block -->
+<div id="block-block-6" class="block block-block clearfix">
+
+    <div class="block-content">
+    
+<p><a href="http://givenow.appstate.edu/biology"><img src="https://biology.appstate.edu/sites/biology.appstate.edu/files/give_nametag_button_3.jpg" alt="give button" class="img-responsive"></a></p>
+  </div> 
+</div> <!-- /.block -->
+<div id="block-block-8" class="block block-block clearfix">
+
+    <div class="block-content">
+    
+<p><a href="https://cas.appstate.edu"><img src="https://biology.appstate.edu/sites/default/files/casbutton.png" alt="College of Arts and Sciences - Appalachian State University" class="img-responsive"></a></p>
+  </div> 
+</div> <!-- /.block -->
+<div id="block-block-5" class="block block-block clearfix">
+
+    <div class="block-content">
+    
+<p><a href="https://degreeworks.appstate.edu/"><img src="https://biology.appstate.edu/sites/biology.appstate.edu/files/finish-in-four-230x98.png" alt="Finish in Four Degree Works logo" class="img-responsive"></a></p>
+  </div> 
+</div> <!-- /.block -->
+<div id="block-block-12" class="block block-block clearfix">
+
+    <div class="block-content">
+    
+<p></p><div id="node-122" class="node node-asu-calendar clearfix">
+
+  
+  
+  <div class="content">
+    
+        <iframe src="https://www.google.com/calendar/embed?mode=AGENDA&amp;ctz=America/New_York&amp;src=biology@appstate.edu" style="border: 0; width: 100%;" height="600"></iframe>
+    
+  </div>
+
+  
+  
+</div>
+
+
+<p><a href="https://biology.appstate.edu/news">View all news &amp; events</a></p>
+  </div> 
+</div> <!-- /.block -->
+  </div>
+        </aside>  <!-- /#sidebar-first -->
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<footer class="wrapper" id="footer-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-3">
+                  <h1 class="footer-title">Contact</h1>
+          <address>Department of Biology<br />ASU Box 32027<br />208 Rankin Science South<br />572 Rivers Street<br />Boone, NC 28608<br />Phone: (828) 262-3025<br /><a href="mailto:biology@appstate.edu">Email us</a><br /></address>        
+              </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-3">
+                  <h1 class="footer-title">Links</h1>
+          <ul id="footer-links-menu" class="nav nav-pills nav-stacked"><li><a href="/" class="active"><i class="fa fa-home"></i> Home</a></li>
+<li><a href="https://www.appstate.edu/disclaimer/"><i class="fa fa-book"></i> Disclaimer</a></li>
+<li><a href="https://policy.appstate.edu/Equal_Opportunity"><i class="fa fa-book"></i> EO Policy</a></li>
+<li><a href="https://accessibility.appstate.edu"><i class="fa fa-info-circle"></i> Accessibility</a></li>
+<li><a href="https://www.appstate.edu/privacy/"><i class="fa fa-book"></i> Privacy Policy</a></li>
+<li><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
+</ul>        
+              </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-3">
+                  <h1 class="footer-title">Networking</h1>
+          <ul class="nav nav-pills"><li><a href="https://twitter.com/AppStateBio" class="networking-item"><i class="fa fa-twitter-square fa-2x"></i><span class="sr-only"> Twitter</span></a></li>
+<li><a href="https://www.facebook.com/AppStateBio/?ref=stream" class="networking-item"><i class="fa fa-facebook-square fa-2x"></i><span class="sr-only"> Facebook</span></a></li>
+</ul>        
+              </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-3" id="footer-university">
+        <a href="http://appstate.edu/" title="Appalachian State University">
+          <img src="https://api.appstate.edu/assets/appstate-new-1200.svg"
+               class="branding-university-logo pull-right"
+               alt="Appalachian State University" />
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      
+      <div class="col-xs-12" id="footer-copyright">
+                <p class="website-manager">Website manager: chalfantdr (andersenlm)</p>
+                <p>Copyright 2024 Appalachian State University. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://biology.appstate.edu/sites/default/files/js/js_MRdvkC2u4oGsp5wVxBG1pGV5NrCPW3mssHxIn6G9tGE.js"></script>
+</body>
+</html>
