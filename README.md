@@ -27,6 +27,15 @@ Install requirements:
 First get images from the Wikipedia page of your choice. Make sure to add the Bing API Key to the file:
 ```get_images.py```
 
+To update failing URLs:
+```update_pending.py```
+
+To find non-JPEG files:
+```./verify.sh | grep 'Non-JPEG'```
+
+To convert images that can be converted to JPEG:
+```./convert.sh```
+
 (optional) If the testing set is small, use the move_files.sh script to move 20% of files:
 ```./move_files plant_images/train plant_images/test```
 
